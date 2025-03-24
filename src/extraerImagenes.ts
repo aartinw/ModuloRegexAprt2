@@ -1,3 +1,5 @@
+import { resultadoFinal } from "./regex";
+
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.getElementById("extraer") as HTMLButtonElement;
   const textarea = document.getElementById("inputText") as HTMLTextAreaElement;
@@ -10,12 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   button.addEventListener("click", () => {
     const htmlContent = textarea.value;
+    const resultadoRegex = resultadoFinal(htmlContent);
 
-    const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/g;
     let matches;
     output.innerHTML = "";
 
-    while ((matches = imgRegex.exec(htmlContent)) !== null) {
+    while ((matches = resultadoRegex) !== null) {
       const imgUrl = matches[1];
 
       const imgElement = document.createElement("img");
