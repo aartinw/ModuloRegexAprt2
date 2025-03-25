@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   button.addEventListener("click", () => {
     const htmlContent = textarea.value;
-    const resultadoRegex = resultadoFinal(htmlContent);
+    const resultadoRegex = resultadoFinal();
 
     let matches;
     output.innerHTML = "";
 
-    while ((matches = resultadoRegex) !== null) {
+    while ((matches = resultadoRegex.exec(htmlContent)) !== null) {
       const imgUrl = matches[1];
 
       const imgElement = document.createElement("img");

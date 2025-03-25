@@ -1,4 +1,3 @@
-export const resultadoFinal = (contenido: string) => {
-  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*>/g;
-  return imgRegex.exec(contenido);
+export const resultadoFinal = () => {
+  return /<img[^>]+src=["']([^"']+)["'][^>]*>/g;
 };
